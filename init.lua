@@ -302,6 +302,7 @@ require('lazy').setup({
         gopls = {},
         pyright = {},
         tsserver = {},
+        csharp_ls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -496,6 +497,30 @@ require('lazy').setup({
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby' } },
+    },
+  },
+
+  {
+    'akinsho/bufferline.nvim',
+    version = '*',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+  },
+
+  {
+    'stevearc/aerial.nvim',
+    config = function()
+      require('aerial').setup {
+        on_attach = function(bufnr)
+          vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', { buffer = bufnr })
+          vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', { buffer = bufnr })
+        end,
+      }
+      vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
+    end,
+    keys = {
+      { '<leader>a', '<cmd>AerialToggle!<CR>', desc = 'Toggle Aerial' },
+      { '{', '<cmd>AerialPrev<CR>', mode = 'n', desc = 'Aerial Previous' },
+      { '}', '<cmd>AerialNext<CR>', mode = 'n', desc = 'Aerial Next' },
     },
   },
 
