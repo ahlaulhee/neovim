@@ -10,7 +10,6 @@ return {
 	},
 	{ "Bilal2453/luvit-meta", lazy = true },
 	{
-		-- Main LSP Configuration
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
@@ -26,8 +25,6 @@ return {
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 				callback = function(event)
-					-- NOTE: Remember that Lua is a real programming language, and as such it is possible
-					-- to define small helper and utility functions so you don't have to repeat yourself.
 					local map = function(keys, func, desc, mode)
 						mode = mode or "n"
 						vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
@@ -85,20 +82,14 @@ return {
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 			local servers = {
-				-- clangd = {},
-				-- gopls = {},
-				-- pyright = {},
-				-- html = {},
-				-- cssls = {},
+				-- :help lspconfig-all
+				gopls = {},
+				html = {},
+				cssls = {},
 				tailwindcss = {},
-				-- dockerls = {},
-				-- sqlls = {},
 				jsonls = {},
 				ts_ls = {},
 				csharp_ls = {},
-				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-				-- Some languages (like typescript) have entire language plugins that can be useful:
-				--    https://github.com/pmizio/typescript-tools.nvim
 
 				lua_ls = {
 					settings = {
@@ -162,11 +153,10 @@ return {
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
-				-- Conform can also run multiple formatters sequentially
-				-- python = { "isort", "black" },
-				--
-				-- You can use 'stop_after_first' to run the first available formatter from the list
-				-- javascript = { "prettierd", "prettier", stop_after_first = true },
+				markdown = { "prettierd", "markdownlint-cli2" },
+				javascript = { "prettierd" },
+				typescript = { "prettierd" },
+				csharp = { "csharpier" },
 			},
 		},
 	},

@@ -41,23 +41,28 @@ vim.keymap.set("n", "<Right>", ":vertical resize +2<CR>", opts)
 -- Buffers
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", opts)
 vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts)
-vim.keymap.set("n", "<leader>x", ":Bdelete!<CR>", opts)
-vim.keymap.set("n", "<leader>b", "<cmd> enew <CR>", opts)
+vim.keymap.set("n", "<leader>x", ":Bdelete!<CR>", { noremap = true, silent = true, desc = "Close current buffer" })
+vim.keymap.set("n", "<leader>b", "<cmd> enew <CR>", { noremap = true, silent = true, desc = "Open new buffer" })
 
 -- Window managment
-vim.keymap.set("n", "<leader>v", "<C-w>v", opts)
-vim.keymap.set("n", "<leader>h", "<C-w>s", opts)
-vim.keymap.set("n", "<leader>se", "<C-w>=", opts)
-vim.keymap.set("n", "<leader>xs", ":close<CR>", opts)
+vim.keymap.set("n", "<leader>v", "<C-w>v", { noremap = true, silent = true, desc = "Split [V]ertically" })
+vim.keymap.set("n", "<leader>h", "<C-w>s", { noremap = true, silent = true, desc = "Split [H]orizontally" })
+vim.keymap.set("n", "<leader>se", "<C-w>=", { noremap = true, silent = true, desc = "Make both splits the same size" })
+vim.keymap.set("n", "<leader>xs", ":close<CR>", { noremap = true, silent = true, desc = "Close split" })
 
 -- Tab
-vim.keymap.set("n", "<leader>to", ":tabnew<CR>", opts)
-vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", opts)
-vim.keymap.set("n", "<leader>tn", ":tabn<CR>", opts)
-vim.keymap.set("n", "<leader>tp", ":tabp<CR>", opts)
+vim.keymap.set("n", "<leader>to", ":tabnew<CR>", { noremap = true, silent = true, desc = "[T]ab [O]pen" })
+vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { noremap = true, silent = true, desc = "Close current tab" })
+vim.keymap.set("n", "<leader>tn", ":tabn<CR>", { noremap = true, silent = true, desc = "Go [T]o [N]ext Tab" })
+vim.keymap.set("n", "<leader>tp", ":tabp<CR>", { noremap = true, silent = true, desc = "Go [T]o [P]revious Tab" })
 
 -- Toggle line wrapping
-vim.keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", opts)
+vim.keymap.set(
+	"n",
+	"<leader>lw",
+	"<cmd>set wrap!<CR>",
+	{ noremap = true, silent = true, desc = "Toggle [L]ine [W]rap" }
+)
 
 -- Stay in indent mode
 vim.keymap.set("v", "<", "<gv", opts)
@@ -67,7 +72,18 @@ vim.keymap.set("v", ">", ">gv", opts)
 vim.keymap.set("v", "p", '"_dP', opts)
 
 -- Diagnostic
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { noremap = true, silent = true, desc = "Next [D]iagnostic" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { noremap = true, silent = true, desc = "Previous [D]iagnostic" })
 -- vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 -- vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
+
+-- Open terminal
+vim.keymap.set("n", "<leader>st", function()
+	vim.cmd.vnew()
+	vim.cmd.term()
+	vim.cmd.wincmd("J")
+	vim.api.nvim_win_set_height(0, 15)
+	vim.cmd("startinsert")
+end, { noremap = true, silent = true, desc = "Open terminal" })
+
+vim.keymap.set("t", "<C-q>", [[<C-\><C-n>:q!<CR>]], { noremap = true, silent = true, desc = "Close terminal" })

@@ -5,14 +5,13 @@ return {
 			"mode",
 			fmt = function(str)
 				return " " .. str
-				-- return ' ' .. str:sub(1, 1) -- displays only the first character of the mode
 			end,
 		}
 
 		local filename = {
 			"filename",
-			file_status = true, -- displays file status (readonly status, modified status)
-			path = 0, -- 0 = just filename, 1 = relative path, 2 = absolute path
+			file_status = true,
+			path = 0,
 		}
 
 		local hide_in_width = function()
@@ -40,14 +39,10 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "codedark", -- Set theme based on environment variable
-				-- Some useful glyphs:
-				-- https://www.nerdfonts.com/cheat-sheet
-				--        
+				theme = "codedark",
+				--          
 				section_separators = { left = "", right = "" },
 				component_separators = { left = "", right = "" },
-				-- section_separators = { left = "", right = "" },
-				-- component_separators = { left = "", right = "" },
 				disabled_filetypes = { "alpha", "neo-tree" },
 				always_divide_middle = true,
 			},
