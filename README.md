@@ -13,46 +13,46 @@ I based my configuration on the [kickstart.nvim](https://github.com/nvim-lua/kic
 
 ### Keybinds
 
-| Mode     | Keymap     | Description                                    |
-| -------- | ---------- | ---------------------------------------------- |
-| Visual   | <          | Stay indent mode after indent                  |
-| Visual   | >          | Stay indent mode after indent                  |
-| Visual   | p          | Preserve last yanked text when pasting         |
-| Insert   | jj         | Back to visual mode                            |
-| Normal   | <Esc>      | Remove search highlight                        |
-| Normal   | <leader>q  | Open diagnostic list                           |
-| Normal   | <C-h>      | Move focus to left window                      |
-| Normal   | <C-l>      | Move focus to right window                     |
-| Normal   | <C-j>      | Move focus to lower window                     |
-| Normal   | <C-k>      | Move focus to upper window                     |
-| Normal   | <C-s>      | Save file                                      |
-| Normal   | x          | Delete character without copying into register |
-| Normal   | <C-d>      | Scroll down and center                         |
-| Normal   | <C-u>      | Scroll up and center                           |
-| Normal   | n          | Find next and center                           |
-| Normal   | N          | Find previous and center                       |
-| Normal   | <Up>       | Shrink window horizontally                     |
-| Normal   | <Down>     | Expand window horizontally                     |
-| Normal   | <Left>     | Shrink window vertically                       |
-| Normal   | <Right>    | Expand window vertically                       |
-| Normal   | <Tab>      | Focus next buffer                              |
-| Normal   | <S-Tab>    | Focus previous buffer                          |
-| Normal   | <leader>x  | Close buffer                                   |
-| Normal   | <leader>b  | New buffer                                     |
-| Normal   | <leader>v  | Split vertically                               |
-| Normal   | <leader>h  | Split horizontally                             |
-| Normal   | <leader>se | Equal size of windows                          |
-| Normal   | <leader>xs | Close window                                   |
-| Normal   | <leader>to | New tab                                        |
-| Normal   | <leader>tx | Close tab                                      |
-| Normal   | <leader>tn | Next tab                                       |
-| Normal   | <leader>tp | Previous tab                                   |
-| Normal   | <leader>lw | Toggle line wrap                               |
-| Normal   | [d         | Next diagnostic                                |
-| Normal   | ]d         | Previous diagnostic                            |
-| Normal   | <leader>st | Open terminal                                  |
-| Terminal | <C-q>      | Close terminal                                 |
-| Terminal | <Esc><Esc> | Exit terminal mode                             |
+| Mode     | Keymap       | Description                                    |
+| -------- | ------------ | ---------------------------------------------- |
+| Visual   | `<`          | Stay indent mode after indent                  |
+| Visual   | `>`          | Stay indent mode after indent                  |
+| Visual   | `p`          | Preserve last yanked text when pasting         |
+| Insert   | `jj`         | Back to visual mode                            |
+| Normal   | `<Esc>`      | Remove search highlight                        |
+| Normal   | `<leader>q`  | Open diagnostic list                           |
+| Normal   | `<C-h>`      | Move focus to left window                      |
+| Normal   | `<C-l>`      | Move focus to right window                     |
+| Normal   | `<C-j>`      | Move focus to lower window                     |
+| Normal   | `<C-k>`      | Move focus to upper window                     |
+| Normal   | `<C-s>`      | Save file                                      |
+| Normal   | `x`          | Delete character without copying into register |
+| Normal   | `<C-d>`      | Scroll down and center                         |
+| Normal   | `<C-u>`      | Scroll up and center                           |
+| Normal   | `n`          | Find next and center                           |
+| Normal   | `N`          | Find previous and center                       |
+| Normal   | `<Up>`       | Shrink window horizontally                     |
+| Normal   | `<Down>`     | Expand window horizontally                     |
+| Normal   | `<Left>`     | Shrink window vertically                       |
+| Normal   | `<Right>`    | Expand window vertically                       |
+| Normal   | `<Tab>`      | Focus next buffer                              |
+| Normal   | `<S-Tab>`    | Focus previous buffer                          |
+| Normal   | `<leader>x`  | Close buffer                                   |
+| Normal   | `<leader>b`  | New buffer                                     |
+| Normal   | `<leader>v`  | Split vertically                               |
+| Normal   | `<leader>h`  | Split horizontally                             |
+| Normal   | `<leader>se` | Equal size of windows                          |
+| Normal   | `<leader>xs` | Close window                                   |
+| Normal   | `<leader>to` | New tab                                        |
+| Normal   | `<leader>tx` | Close tab                                      |
+| Normal   | `<leader>tn` | Next tab                                       |
+| Normal   | `<leader>tp` | Previous tab                                   |
+| Normal   | `<leader>lw` | Toggle line wrap                               |
+| Normal   | `[d`         | Next diagnostic                                |
+| Normal   | `]d`         | Previous diagnostic                            |
+| Normal   | `<leader>st` | Open terminal                                  |
+| Terminal | `<C-q>`      | Close terminal                                 |
+| Terminal | `<Esc><Esc>` | Exit terminal mode                             |
 
 ### Plugins
 
