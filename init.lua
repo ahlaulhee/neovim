@@ -24,6 +24,7 @@ require("lazy").setup({
 	require("plugins/lualine"),
 	require("plugins/todo-comments"),
 	require("plugins/colorizer"),
+	require("plugins/debug"),
 	-- require("plugins/none-ls"),
 })
 
