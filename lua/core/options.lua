@@ -27,7 +27,7 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
---
+-- Warnings, errors, etc... showing on the line number
 vim.opt.signcolumn = "yes"
 
 -- Always leave 10 lines above and below the cursor.

@@ -15,6 +15,7 @@ require("lazy").setup({
 	require("plugins/which-key"),
 	require("plugins/bufferline"),
 	require("plugins/colorscheme"),
+	require("plugins/roslyn"),
 	require("plugins/lsp"),
 	require("plugins/treesitter"),
 	require("plugins/aerial"),
